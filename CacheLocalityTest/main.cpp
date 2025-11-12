@@ -35,7 +35,7 @@ int main() {
 	// The test which gets the most fair timed comparison, 
 	// although sequentialVector[i] will just retrieve i, this is necessary to ensure that the time difference
 	// is due to memory access order and not the overhead of indexing the randomVector.
-	/*
+	
 	long long sum1 = 0;
 	auto sequentialTestStart = std::chrono::steady_clock::now();
 	for (int i = 0; i < ENTITIES; i++) {
@@ -51,11 +51,11 @@ int main() {
 		sum2 += testVector[randomVector[i]];
 	}
 	auto randomTestEnd = std::chrono::steady_clock::now();
-	*/
+
 
 	// This is the code I used for memory profiling as we are only indexing one vector rather than two per loop.
 	// This isn't suitable for timing due to the overhead of generating a random index.
-	
+	/*
 	long long sum1 = 0;
 	auto sequentialTestStart = std::chrono::steady_clock::now();
 	for (int i = 0; i < ENTITIES; i++) {
@@ -71,7 +71,7 @@ int main() {
 		sum2 += testVector[dis(gen)];
 	}
 	auto randomTestEnd = std::chrono::steady_clock::now();
-	
+	*/
 
 
 
