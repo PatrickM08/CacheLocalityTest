@@ -3,6 +3,17 @@
 ## outline
 This is an experiment to measure the performance difference in retrieving data sequentially compared to fragmented data (simulated through random indexing). 
 
+## Building and Running
+```bash
+cd CacheLocalityTest
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+```
+
+Then run the executable from the `build/Release/` (Windows) or `build/` (Linux/Mac) directory.
+
+**Note:** Use Release builds for accurate results.
+
 ## why?
 Recently I've been developing my own Entity Component System (ECS) game engine in C++ (https://github.com/PatrickM08/3DGameEngine). ECS is the current prevailing architecture in modern game engines, valued not only for the flexibility of the component/system architecture but the performance benefits of sequential component traversal.  
 
