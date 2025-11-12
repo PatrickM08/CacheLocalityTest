@@ -19,8 +19,6 @@ int main() {
 	testVector.reserve(ENTITIES);
 	sequentialVector.reserve(ENTITIES);
 	sequentialVector.reserve(ENTITIES);
-	
-	// No reserve 34ms, reserve 49ms for 10000000
 
 	for (int i = 0; i < ENTITIES; i++) {
 		testVector.push_back(i);
