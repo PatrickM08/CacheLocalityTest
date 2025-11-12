@@ -33,6 +33,6 @@ I profiled my program using uProf’s “Investigate Data Access” config, this
 
 So, if the performance decrease is truly caused by cache misses, we should see significantly more fetches for random access. Which is exactly what we can see: 
 
- ![Profiler Output Image](CacheLocalityTest/
+ ![Profiler Output Image](profiler_screenshot.png)
 
-We can see that random access results in a huge amount of cache misses (with peaks of 400,000 fetches!) relative to sequential access which can hardly be seen on the left of the graph. However, sequential access does still have uniform peaks of 25,000 fetches, this is when the program reaches the end of the cache lines stored in cache and must fetch more data from main memory. 
+We can see that random access results in a huge amount of cache misses (with peaks of 400,000 fetches!) relative to sequential access which can be seen on the left of the graph. However, sequential access does still have uniform peaks of 25,000 fetches, this is when the program reaches the end of the cache lines stored in cache and must fetch more data from main memory. 
