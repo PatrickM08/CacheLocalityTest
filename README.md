@@ -29,10 +29,10 @@ I created two sum variables and each iteration the integer retrieved from the te
 
 I used std::chrono::steady_clock to measure how long each loop took. Now that everything was in place we can run our tests and retrieve our times: 
 
-Sequential milliseconds: 22ms  
-Random milliseconds: 417ms
+- Sequential milliseconds: 22ms  
+- Random milliseconds: 417ms  
 
-Results may vary based on your CPU, however the difference is definitely significant! But how can we be sure that this disparity is caused by cache misses? For that we will need to profile.
+Results may vary based on your CPU, however the difference is definitely significant (19x)! But how can we be sure that this disparity is caused by cache misses? For that we will need to profile.
 
 ## Profiling 
 
@@ -46,4 +46,10 @@ So, if the performance decrease is truly caused by cache misses, we should see s
 
  ![Profiler Output Image](profiler_screenshot.png)
 
-We can see that random access results in a huge amount of cache misses (with peaks of 400,000 fetches!) relative to sequential access which can be seen on the left of the graph. However, sequential access does still have uniform peaks of 25,000 fetches, this is when the program reaches the end of the cache lines stored in cache and must fetch more data from main memory. 
+We can see that random access results in a huge amount of cache misses relative to sequential access which can be seen on the left of the graph. However, sequential access does still have uniform peaks, this is when the program reaches the end of the cache lines stored in cache and must fetch more data from main memory. 
+
+## Conclusion 
+
+This is obviously the worst-case scenario. Completely random access over one hundred million entities is not typical for any game or program. However, this experiment does show that there are performance benefits to data-oriented design that should not be ignored. 
+
+Thank you for reading.
