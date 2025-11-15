@@ -23,7 +23,7 @@ However, I wasn’t going to take this as fact without testing it myself and the
 
 ## Test Implementation 
 
-First, I timed how long how long it would take to access many entities (integers in this case) sequentially and then randomly. I did so by creating a test vector filled with entities (to iterate over), a vector of equal size filled with random indexes between 0 and the number of entities (this is to avoid the cost of generating a random number every loop), and a vector of sequential indexes from 0 to the number of entities (to account for the overhead caused by accessing the random vector). I set the entity count to one hundred million so that the program was substantial enough to be measured.
+First, I timed how long it would take to access many entities (integers in this case) sequentially and then randomly. I did so by creating a test vector filled with entities (to iterate over), a vector of equal size filled with random indexes between 0 and the number of entities (this is to avoid the cost of generating a random number every loop), and a vector of sequential indexes from 0 to the number of entities (to account for the overhead caused by accessing the random vector). I set the entity count to one hundred million so that the program was substantial enough to be measured.
 
 I created two sum variables and each iteration the integer retrieved from the test vector was added to its respective sum. This sum is output at the end of the program, if it isn’t the compiler completely optimizes away the loops! This is due to “dead code elimination” a compiler optimization trick that removes code that doesn't affect the program’s output.
 
