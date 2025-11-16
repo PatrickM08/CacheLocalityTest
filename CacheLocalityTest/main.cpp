@@ -18,7 +18,7 @@ int main() {
 	
 	testVector.reserve(ENTITIES);
 	sequentialVector.reserve(ENTITIES);
-	sequentialVector.reserve(ENTITIES);
+	randomVector.reserve(ENTITIES);
 
 	for (int i = 0; i < ENTITIES; i++) {
 		testVector.push_back(i);
