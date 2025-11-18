@@ -1,7 +1,7 @@
 # Sequential VS Fragmented Memory Access Experiment
 
 ## outline
-This is an experiment to measure the performance difference in retrieving data sequentially compared to fragmented data (simulated through random indexing). 
+This is an experiment to measure the performance difference in retrieving sequential data compared to fragmented data (simulated through random indexing). 
 
 **Note:** This test simulates realistic sequential vs. fragmented access patterns to demonstrate cache locality effects in practice, rather than measuring isolated cache-vs-RAM latency.
 
